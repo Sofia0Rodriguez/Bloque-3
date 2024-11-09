@@ -1,0 +1,13 @@
+def es_palindromo(cadena):
+    # Eliminar caracteres no alfabéticos y convertir a minúsculas
+    cadena_limpia = ''.join(c for c in cadena.lower() if c.isalnum())
+    
+    # Verificar si la cadena limpia es igual a su reverso
+    return cadena_limpia == cadena_limpia[::-1]
+
+# Ejemplo de uso
+texto = "A man a plan a canal Panama"
+
+# Llamamos a la función y mostramos el resultado
+resultado = es_palindromo(texto)
+print(resultado)  # Esto imprimirá: True
