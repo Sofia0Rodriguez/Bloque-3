@@ -1,0 +1,17 @@
+def mostrar_caracteres_ascii(numeros):
+    """
+    Convierte una lista de números en sus caracteres ASCII correspondientes.
+
+    Parámetros:
+    numeros (list): Lista de números enteros que representan códigos ASCII.
+
+    Retorno:
+    list: Lista de caracteres ASCII correspondientes a los números proporcionados.
+    """
+    caracteres = [chr(num) for num in numeros]
+    return caracteres
+
+# Ejemplo de uso
+numeros = [65, 66, 67, 97, 98, 99]
+print("Números:", numeros)
+print("Caracteres ASCII:", mostrar_caracteres_ascii(numeros))
