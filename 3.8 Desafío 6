@@ -1,0 +1,55 @@
+import math
+
+# Función para verificar si un número es primo
+def es_primo(n):
+    """
+    Verifica si un número es primo.
+    Un número primo es aquel que solo es divisible por 1 y por él mismo.
+    
+    Parámetros:
+    n (int): El número a verificar.
+    
+    Retorna:
+    bool: True si el número es primo, False si no lo es.
+    """
+    # Casos especiales
+    if n <= 1:
+        return False  # Los números menores o iguales a 1 no son primos
+    if n == 2:
+        return True  # El 2 es el único número primo par
+    
+    # Verificamos divisibilidad desde 2 hasta la raíz cuadrada de n
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False  # Si es divisible, no es primo
+    
+    return True  # Si no es divisible por ningún número, es primo
+
+# Función para contar la cantidad de números primos en una lista
+def contar_primos(lista):
+    """
+    Cuenta cuántos números primos hay en una lista.
+    
+    Parámetros:
+    lista (list): Lista de números enteros.
+    
+    Retorna:
+    int: Cantidad de números primos en la lista.
+    """
+    return sum(1 for numero in lista if es_primo(numero))
+
+# Main: Ejecuta las funciones y muestra los resultados
+def main():
+    # Lista de ejemplo de números
+    lista_numeros = [10, 15, 23, 28, 31, 2, 4, 5, 7, 9]
+    
+    # Contar cuántos números primos hay en la lista
+    cantidad_primos = contar_primos(lista_numeros)
+    
+    # Mostrar los resultados
+    print(f"Lista de números: {lista_numeros}")
+    print(f"Cantidad de números primos en la lista: {cantidad_primos}")
+
+# Llamar a la función main para ejecutar el programa
+if __name__ == "__main__":
+    main()
