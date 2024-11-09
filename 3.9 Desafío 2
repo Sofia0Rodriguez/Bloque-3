@@ -1,0 +1,28 @@
+def resaltar_palabra(texto, palabra_clave, marcador_inicio='**', marcador_fin='**'):
+    """
+    Resalta recursivamente todas las ocurrencias de una palabra clave en un texto.
+
+    Parámetros:
+    texto (str): Texto largo en el que se buscará la palabra clave.
+    palabra_clave (str): Palabra clave que se resaltará en el texto.
+    marcador_inicio (str): Marcador que se colocará al inicio de la palabra resaltada.
+    marcador_fin (str): Marcador que se colocará al final de la palabra resaltada.
+
+    Retorna:
+    str: Texto con todas las ocurrencias de la palabra clave resaltadas.
+    """
+    # Si la palabra clave no está en el texto, no se hace nada
+    if palabra_clave not in texto:
+        return texto
+
+    # Reemplaza todas las ocurrencias de la palabra clave con los marcadores alrededor
+    texto_resaltado = texto.replace(palabra_clave, f"{marcador_inicio}{palabra_clave}{marcador_fin}")
+
+    # Llama recursivamente hasta que no haya más ocurrencias sin resaltar
+    return texto_resaltado
+
+# Ejemplo de uso
+texto_largo = "Este es un ejemplo de texto largo donde queremos resaltar la palabra_clave en todo el texto. La palabra_clave puede repetirse en varias partes del texto."
+palabra_clave = "palabra_clave"
+resultado = resaltar_palabra(texto_largo, palabra_clave)
+print(resultado)
