@@ -1,0 +1,26 @@
+def mcd_recursivo(a, b):
+    """
+    Función recursiva que calcula el máximo común divisor (MCD) de dos números
+    usando el algoritmo de Euclides.
+    
+    Parámetros:
+    a (int): El primer número
+    b (int): El segundo número
+    
+    Retorna:
+    int: El MCD de a y b
+    """
+    # Caso base: cuando b es 0, el MCD es a
+    if b == 0:
+        return a
+    # Caso recursivo: MCD de b y a % b
+    else:
+        return mcd_recursivo(b, a % b)
+
+# Ejemplo de uso
+numero1 = 8
+numero2 = 12
+
+# Llamamos a la función y mostramos el resultado
+resultado = mcd_recursivo(numero1, numero2)
+print(f"El MCD de {numero1} y {numero2} es: {resultado}")
