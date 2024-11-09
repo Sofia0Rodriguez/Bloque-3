@@ -1,0 +1,15 @@
+def mcd(a, b):
+    # Mientras b no sea 0, seguimos dividiendo y tomando el residuo
+    while b != 0:
+        a, b = b, a % b  # b toma el valor del residuo y a el valor de b
+    return a  # Cuando b es 0, a es el MCD
+
+# Ejemplo de uso
+numero1 = 56
+numero2 = 98
+
+# Llamamos a la función
+resultado = mcd(numero1, numero2)
+
+# Imprimimos el resultado
+print(f"El MCD de {numero1} y {numero2} es: {resultado}")
