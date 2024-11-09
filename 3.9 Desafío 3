@@ -1,0 +1,24 @@
+def invertir_palabras(oracion):
+    """
+    Invierte el orden de las palabras en una oración de manera recursiva.
+
+    Parámetros:
+    oracion (str): La oración que contiene las palabras a invertir.
+
+    Retorna:
+    str: La oración con las palabras en orden inverso.
+    """
+    # Caso base: Si la oración está vacía o tiene solo una palabra, no hay nada que invertir
+    if not oracion or ' ' not in oracion:
+        return oracion
+
+    # Encuentra el primer espacio y separa la palabra y el resto de la oración
+    palabra, resto = oracion.split(' ', 1)
+
+    # Llama recursivamente sobre el resto de la oración
+    return invertir_palabras(resto) + ' ' + palabra
+
+# Ejemplo de uso
+oracion = "Este es el ejemplo de el desafio 3 "
+resultado = invertir_palabras(oracion)
+print(resultado)
