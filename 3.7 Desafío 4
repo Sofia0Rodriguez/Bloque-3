@@ -1,0 +1,23 @@
+# Ingreso de las notas
+notas = list(map(float, input("Ingrese las notas de los estudiantes separadas por espacios: ").split()))
+
+# Pregunta 1: Calcular el promedio
+promedio = sum(notas) / len(notas)
+print("Promedio de las notas:", promedio)
+
+# Pregunta 2: Encontrar la nota más baja y la más alta
+print("Nota más baja:", min(notas))
+print("Nota más alta:", max(notas))
+
+# Pregunta 3: Identificar la nota que más se repite
+from collections import Counter
+nota_mas_comun = Counter(notas).most_common(1)[0][0]
+print("Nota que más se repite:", nota_mas_comun)
+
+# Pregunta 4 (Plus): Gráfico de barras de las notas
+import matplotlib.pyplot as plt
+plt.hist(notas, bins=range(int(min(notas)), int(max(notas)) + 2), edgecolor='black')
+plt.xlabel("Notas")
+plt.ylabel("Frecuencia")
+plt.title("Distribución de Notas")
+plt.show()
