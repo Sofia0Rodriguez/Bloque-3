@@ -1,0 +1,22 @@
+def contar_platanos(pila_platanos, total_acumulado=0):
+    """
+    Función recursiva que simula el conteo de plátanos por un mono distraído.
+    
+    Parámetros:
+    pila_platanos (int): Número de plátanos en la pila actual que el mono está contando.
+    total_acumulado (int): El total acumulado de plátanos que el mono ha contado hasta ahora.
+    
+    Retorna:
+    int: El total acumulado de plátanos contados por el mono.
+    """
+    # Caso base: Si no quedan plátanos en la pila, retorna el total acumulado
+    if pila_platanos == 0:
+        return total_acumulado
+    
+    # El mono cuenta un plátano y luego vuelve a empezar, sumando al total acumulado
+    return contar_platanos(pila_platanos - 1, total_acumulado + 1)
+
+# Ejemplo de uso
+platanos_iniciales = 5
+total_contado = contar_platanos(platanos_iniciales)
+print(f"El mono ha contado un total de {total_contado} plátanos.")
