@@ -1,0 +1,16 @@
+def capitalizar_palabras(cadena):
+    # Dividir la cadena en palabras
+    palabras = cadena.split()
+
+    # Capitalizar la primera letra de cada palabra y mantener el resto igual
+    palabras_capitalizadas = [palabra[0].upper() + palabra[1:] if palabra else '' for palabra in palabras]
+
+    # Unir las palabras nuevamente con un espacio entre ellas y devolver el resultado
+    return ' '.join(palabras_capitalizadas)
+
+# Ejemplo de uso
+texto = "esto es un ejemplo"
+resultado = capitalizar_palabras(texto)
+
+# Imprimir el resultado
+print(resultado)
